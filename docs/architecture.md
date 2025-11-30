@@ -2,18 +2,44 @@
 
 ## Overview
 
-[Architecture description]
+Meeting Intelligence Suite captures meeting audio, transcribes it using speech AI, and applies NLP to extract structure, actions, and decisions.
 
 ## Components
 
-### Frontend
+### Recording Connector
+- **Teams Bot:** Joins meetings, captures audio stream
+- **Zoom Webhook:** Receives recording completion events
+- **File Import:** Upload recordings for processing
 
-### Backend
+### Transcription Engine
+- **Technology:** Azure Speech Services / AWS Transcribe
+- **Features:** Speaker diarization, punctuation, timestamps
+- **Accuracy:** 95%+ for clear audio
 
-### AI/ML
+### NLP Analysis Engine
+- **Topic Segmentation:** Aligns with agenda items
+- **Action Extraction:** Identifies commitments
+- **Decision Detection:** Captures formal decisions
+- **Summary Generation:** Creates concise minutes
 
-### Data Store
+### Output Generator
+- **Templates:** Formal minutes, project summaries
+- **Integrations:** Push to SharePoint, Modern.gov
+- **Notifications:** Email minutes, action reminders
 
-## Integration Points
+## Data Flow
 
-[Integration architecture]
+```
+Meeting Audio → Transcription → NLP Analysis → Outputs
+       ↓              ↓              ↓           ↓
+  Recording      Transcript     Structured    Minutes,
+   Storage                        Data      Actions, Decisions
+```
+
+## Security
+
+- Audio encrypted in transit and at rest
+- Transcripts stored with access controls
+- Retention policies configurable
+- GDPR consent management
+- UK data residency
